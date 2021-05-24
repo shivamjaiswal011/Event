@@ -36,9 +36,10 @@ namespace events
                 options.AddPolicy("AnotherPolicy",
                 builder =>
                 {
-                    builder.WithOrigins("http://localhost:4200")
+                    _ = builder.WithOrigins("http://localhost:4200")
                                         .AllowAnyHeader()
-                                        .AllowAnyMethod();
+                                        .AllowAnyMethod()
+                                        .AllowAnyOrigin();
                 }));
 
             services.AddSwaggerGen(c =>
